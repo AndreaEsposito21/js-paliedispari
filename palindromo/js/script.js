@@ -8,15 +8,17 @@ console.log( parolaUtente );
 
 // Faccio un ciclo per manipolare la stringa
 // Parola letta da sinistra a destra ----------------------------------
+var parolaDritta = '';
 for (var i = 0; i < parolaUtente.length; i++) {
     console.log('Parola dritta ', parolaUtente[i]);
+    parolaDritta = parolaUtente[i];
 }
-var parolaDritta = parolaUtente[i]; 
 // Parola letta da destra a sinistra ----------------------------------
+var parolaRovescio = '';
 for (var i = parolaUtente.length -1; i >= 0 ; i--) {
     console.log('Parola al rovescio ', parolaUtente[i]);  
+    parolaRovescio = parolaUtente[i];
 }
-var parolaRovescio = parolaUtente[i];
 // ----------------------------------
 
 
