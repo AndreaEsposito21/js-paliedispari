@@ -6,36 +6,37 @@
 var parolaUtente = prompt("Inserisci una Parola");
 console.log( parolaUtente );
 
-// Faccio un ciclo per manipolare la stringa
-// Parola letta da sinistra a destra ----------------------------------
-var parolaDritta = '';
-for (var i = 0; i < parolaUtente.length; i++) {
-    console.log('Parola dritta ', parolaUtente[i]);
-    parolaDritta = parolaUtente[i];
-}
-// Parola letta da destra a sinistra ----------------------------------
-var parolaRovescio = '';
-for (var i = parolaUtente.length -1; i >= 0 ; i--) {
-    console.log('Parola al rovescio ', parolaUtente[i]);  
-    parolaRovescio = parolaUtente[i];
-}
-// ----------------------------------
-
 
 // Creo una funzione che deve capire se la parola inserita è palindroma
 //
+// Creo un ciclo per manipolare la parolaUtente
 // 
 function funzionePalindromo(parolaPalindroma) {
     var palindromo;
-    
-    if ( parolaDritta == parolaRovescio ) {
-        palindromo = "La parola che hai scritto " + "è palindroma";
-    } else {
-        palindromo = "La parola che hai scritto " + "non è palindroma";
+
+    // Parola letta al contrario ----------------------------------
+    var parolaRovescio = '';
+    for (var i = parolaPalindroma.length -1; i >= 0 ; i--) {
+        var thisParola = parolaPalindroma[i];
+        console.log('Parola al rovescio ', thisParola);
+
+        parolaRovescio += thisParola;
     }
-    console.log(palindromo);
+    console.log(parolaRovescio);
+    // ----------------------------------    
+
+    // Compariamo la parola scritta dall'utente sia uguale se letta al contrario
+    if ( parolaPalindroma == parolaRovescio ) {
+        palindromo = "La parola che hai scritto è palindroma";
+    } else {
+        palindromo = "La parola che hai scritto non è palindroma";
+    }
+
+    
     return palindromo;
+    console.log(palindromo);
 }
+
 // ----------------------------------
 
 var messaggioParola = funzionePalindromo(parolaUtente);
